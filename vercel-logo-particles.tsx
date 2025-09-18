@@ -3,11 +3,10 @@
 import { useRef, useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { toast } from "@/hooks/use-toast"
-import { Button } from "@/components/ui/button"
+ 
 
 export default function Component() {
-  const DOCS_URL = "https://sup-lang.org/docs"
-  const GITHUB_URL = "https://github.com/sup-lang/sup-lang"
+  
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const mousePositionRef = useRef({ x: 0, y: 0 })
   const isTouchingRef = useRef(false)
@@ -378,14 +377,7 @@ export default function Component() {
         className="absolute left-1/2 -translate-x-1/2 text-center z-10"
         style={menuTop != null ? { top: menuTop } : undefined}
       >
-        <div className="mb-2 flex items-center justify-center gap-2">
-          <Button asChild size="sm" variant="secondary">
-            <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">Docs</a>
-          </Button>
-          <Button asChild size="sm" variant="outline">
-            <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">GitHub</a>
-          </Button>
-        </div>
+        
         {isMenuOpen ? (
           <div
             ref={menuRef}
@@ -394,24 +386,7 @@ export default function Component() {
             aria-labelledby="menu-button"
             className="mb-3 flex flex-col items-center gap-1"
           >
-            <a
-              role="menuitem"
-              className="font-mono text-white text-xs sm:text-base md:text-sm px-3 py-1 rounded bg-black/60"
-              href={DOCS_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Docs
-            </a>
-            <a
-              role="menuitem"
-              className="font-mono text-white text-xs sm:text-base md:text-sm px-3 py-1 rounded bg-black/60"
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              GitHub
-            </a>
+            
             <button
               role="menuitem"
               className="font-mono text-white text-xs sm:text-base md:text-sm px-3 py-1 rounded bg-black/60"
